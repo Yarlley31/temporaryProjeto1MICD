@@ -81,19 +81,19 @@ module modo_normal (
 
     // Exemplo de mapeamento: Saida[0] para cada combinação de FTPL
     // 0000->1, 0001->0, 0010->0, 0011->0, 0100->1, 0101->1, 0110->1, 0111->1, 1000->0, etc...
-    mux16x1 m_s0 (.d(16'b1100001111110001), .s(s_in), .out(saida[0]));
-    mux16x1 m_s1 (.d(16'b1111110000010000), .s(s_in), .out(saida[1]));
-    mux16x1 m_s2 (.d(16'b1100000100011010), .s(s_in), .out(saida[2]));
-    mux16x1 m_s3 (.d(16'b1111111100000000), .s(s_in), .out(saida[3]));
+    mux16x1 m_s0 (.d(16'b1100000011110001), .s(s_in), .out(saida[0]));
+    mux16x1 m_s1 (.d(16'b1111101010110000), .s(s_in), .out(saida[1]));
+    mux16x1 m_s2 (.d(16'b1100010101000100), .s(s_in), .out(saida[2]));
+    mux16x1 m_s3 (.d(16'b1111010100000000), .s(s_in), .out(saida[3]));
 
     // Mapeamento HEX (baseado nos valores do case original)
-    mux16x1 m_h0 (.d(16'b0000000010100011), .s(s_in), .out(hex[0]));
-    mux16x1 m_h1 (.d(16'b1111000011110000), .s(s_in), .out(hex[1]));
-    mux16x1 m_h2 (.d(16'b1111000001001100), .s(s_in), .out(hex[2]));
-    mux16x1 m_h3 (.d(16'b1100000100011100), .s(s_in), .out(hex[3]));
-    mux16x1 m_h4 (.d(16'b0000000000101101), .s(s_in), .out(hex[4]));
-    mux16x1 m_h5 (.d(16'b0000001111001101), .s(s_in), .out(hex[5]));
-    mux16x1 m_h6 (.d(16'b0000000000000111), .s(s_in), .out(hex[6]));
+    mux16x1 m_h0 (.d(16'b0000000000000101), .s(s_in), .out(hex[0]));
+    mux16x1 m_h1 (.d(16'b1100010101000000), .s(s_in), .out(hex[1]));
+    mux16x1 m_h2 (.d(16'b1100111100000000), .s(s_in), .out(hex[2]));
+    mux16x1 m_h3 (.d(16'b1111000000000101), .s(s_in), .out(hex[3]));
+    mux16x1 m_h4 (.d(16'b0000000011110101), .s(s_in), .out(hex[4]));
+    mux16x1 m_h5 (.d(16'b0000101010110001), .s(s_in), .out(hex[5]));
+    mux16x1 m_h6 (.d(16'b0000010100001011), .s(s_in), .out(hex[6]));
 
     // Mapeamento LEDs
     mux16x1 m_al (.d(16'b1011101000001001), .s(s_in), .out(alerta));
@@ -111,18 +111,18 @@ module modo_diagnostico (
 );
     wire [3:0] s_in = {F, T, P, L};
     // Mesmas lógicas de saída do Normal, mas LEDs são 0 fixo
-    mux16x1 m_s0 (.d(16'b1100001111110001), .s(s_in), .out(saida[0]));
-    mux16x1 m_s1 (.d(16'b1111110000010000), .s(s_in), .out(saida[1]));
-    mux16x1 m_s2 (.d(16'b1100000100011010), .s(s_in), .out(saida[2]));
-    mux16x1 m_s3 (.d(16'b1111111100000000), .s(s_in), .out(saida[3]));
+    mux16x1 m_s0 (.d(16'b1100000011110001), .s(s_in), .out(saida[0]));
+    mux16x1 m_s1 (.d(16'b1111101010110000), .s(s_in), .out(saida[1]));
+    mux16x1 m_s2 (.d(16'b1100010101000100), .s(s_in), .out(saida[2]));
+    mux16x1 m_s3 (.d(16'b1111010100000000), .s(s_in), .out(saida[3]));
     
-    mux16x1 m_h0 (.d(16'b0000000010100011), .s(s_in), .out(hex[0]));
-    mux16x1 m_h1 (.d(16'b1111000011110000), .s(s_in), .out(hex[1]));
-    mux16x1 m_h2 (.d(16'b1111000001001100), .s(s_in), .out(hex[2]));
-    mux16x1 m_h3 (.d(16'b1100000100011100), .s(s_in), .out(hex[3]));
-    mux16x1 m_h4 (.d(16'b0000000000101101), .s(s_in), .out(hex[4]));
-    mux16x1 m_h5 (.d(16'b0000001111001101), .s(s_in), .out(hex[5]));
-    mux16x1 m_h6 (.d(16'b0000000000000111), .s(s_in), .out(hex[6]));
+    mux16x1 m_h0 (.d(16'b0000000000000101), .s(s_in), .out(hex[0]));
+    mux16x1 m_h1 (.d(16'b1100010101000000), .s(s_in), .out(hex[1]));
+    mux16x1 m_h2 (.d(16'b1100111100000000), .s(s_in), .out(hex[2]));
+    mux16x1 m_h3 (.d(16'b1111000000000101), .s(s_in), .out(hex[3]));
+    mux16x1 m_h4 (.d(16'b0000000011110101), .s(s_in), .out(hex[4]));
+    mux16x1 m_h5 (.d(16'b0000101010110001), .s(s_in), .out(hex[5]));
+    mux16x1 m_h6 (.d(16'b0000010100001011), .s(s_in), .out(hex[6]));
 
     assign alerta = 1'b0;
     assign invasao = 1'b0;
@@ -139,7 +139,7 @@ module modo_manutencao (
 );
     // Saida 4'b0110, Hex 7'b0100000, LEDs 1
     assign saida   = 4'b0110;
-    assign hex     = 7'b0100000;
+    assign hex     = 7'b0000010;
     assign alerta  = 1'b1;
     assign invasao = 1'b1;
     assign perigo  = 1'b1;
